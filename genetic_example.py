@@ -4,7 +4,7 @@ class StationaryGenetic(Genetic):
     def __init__(self, reproduction_operator, evaluation_key):
         population = StationaryPopulation(reproduction_operator,
                                           evaluation_key)
-
+        super().__init__(population)
 
 class SimpleGenerationalMemetic(Genetic):
     def __init__(self, reproduction_operator, evaluation_key):
