@@ -76,6 +76,5 @@ class GenerationalPopulation(Population):
             parents = self.get_parents()
             hijos = self.reproduction_operator(self[parents[0]], self[partens[1]])
             for h in hijos: self.append(h)         # Añadimos a la poblacion
-
         del self[:pairs*2]
 
