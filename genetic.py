@@ -8,7 +8,7 @@ class Genetic(object, ABC):
 
     @abstractmethod
     def initialize_population(self):
-        pass
+        raise NotImplementedError
 
     def local_search(self):
         pass
