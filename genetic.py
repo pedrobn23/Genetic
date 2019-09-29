@@ -2,12 +2,9 @@ from population_examples import *
 from math import math
 
 class Genetic(object, ABC):
-    def __init__(self):
-        self.initialize_population()
-
     @abstractmethod
-    def initialize_population(self):
-        raise NotImplementedError
+    def __init__(self, population):
+        self.population = population
 
     def local_search(self):
         pass

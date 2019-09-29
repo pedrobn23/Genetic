@@ -2,25 +2,16 @@ from genetic import *
 
 class StationaryGenetic(Genetic):
     def __init__(self, reproduction_operator, evaluation_key):
-        super().__init__()
+        population = StationaryPopulation(reproduction_operator,
+                                          evaluation_key)
 
-    def initialize_population(self):
-        self.population =
-        StationaryPopulation(self, reproduction_operator,
-                             evaluation_key, n_characteristics=10,
-                             population_size=30)
 
 class SimpleGenerationalMemetic(Genetic):
     def __init__(self, reproduction_operator, evaluation_key):
-        super().__init__(º)
-        key = evaluation_key
-
-    def initialize_population(self):
-        self.population =
-        GenerationalPopulation(self, reproduction_operator,
-                               evaluation_key, p_repro=0.7
-                               n_characteristics=10,
-                               population_size=30)
+        self.key = evaluation_key
+        population = GenerationalPopulation(reproduction_operator,
+                                            evaluation_key)
+        super().__init__(population)
 
     def __mutate_vector(vector):
         mutation = np.random.randint(len(vector))
@@ -39,7 +30,7 @@ class SimpleGenerationalMemetic(Genetic):
         value = key(mutated)
         for i in range(500):
             alt_mutated = self.__mutate_vector(mutated)
-            alt_value = key(alt_mutated)
+            alt_value = self.key(alt_mutated)
             if alt_value > value:
                 mutated = alt_mutated
         self.pop(element)
