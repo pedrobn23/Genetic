@@ -60,7 +60,7 @@ class StationaryPopulation(Population):
         parents = self.get_parents()         # Generamos los padres e hijos
         hijos = self.reproduction_operator(self[parents[0]], self[partens[1]])
         for h in hijos: self.append(h)         # Añadimos a la poblacion
-        self.population = self.population[2:]  # Quitamos los dos peores
+        self = self[2:]  # Quitamos los dos peores
 
 class GenerationalPopulation(Population):
     def __init__(self, reproduction_operator, evaluation_key, p_repro = 0.7,
@@ -77,5 +77,5 @@ class GenerationalPopulation(Population):
             hijos = self.reproduction_operator(self[parents[0]], self[partens[1]])
             for h in hijos: self.append(h)         # Añadimos a la poblacion
 
-        self.population = self.population[pairs*2:]
+        self = self[pairs*2:]
 
