@@ -20,7 +20,7 @@ class Population(list, ABC):
 
     @abstractmethod
     def advance_generation(self):
-        pass
+        raise NotImplementedError
 
     def mutate_element(self, sigma=0.3, element=None):
         if not self:
