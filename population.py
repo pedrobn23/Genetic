@@ -10,8 +10,6 @@ class Population(list, ABC):
     def __init__(self, key, mutation_key, n_characteristics=10, population_size=30):
         super().__init__()
         self.evaluation_function = key
-        self.mutation_function = mutation_key
-        self.value_list = []
         for i in range(population_size):
             self.append(np.random.rand(n_characteristics))
 
@@ -32,7 +30,6 @@ class Population(list, ABC):
 
         self.pop(element)
         self.append(mutated_characts)
-
 
     def append(self, element):
         x = Gene(charasteristics=element,
