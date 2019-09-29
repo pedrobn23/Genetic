@@ -1,9 +1,8 @@
 from genetic import *
 
 class StationaryGenetic(Genetic):
-    def __init__(self, reproduction_operator, evaluation_key,
-                 n_evaluaciones=15000):
-        super().__init__(n_evaluaciones)
+    def __init__(self, reproduction_operator, evaluation_key):
+        super().__init__()
 
     def initialize_population(self):
         self.population =
@@ -12,9 +11,8 @@ class StationaryGenetic(Genetic):
                              population_size=30)
 
 class SimpleGenerationalMemetic(Genetic):
-    def __init__(self, reproduction_operator, evaluation_key,
-                 n_evaluaciones=15000):
-        super().__init__(n_evaluaciones)
+    def __init__(self, reproduction_operator, evaluation_key):
+        super().__init__(º)
         key = evaluation_key
 
     def initialize_population(self):
