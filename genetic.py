@@ -10,7 +10,7 @@ class Genetic(object, ABC):
     def initialize_population(self):
         pass
 
-    def bl(self):
+    def local_search(self):
         pass
 
     def run(self):
@@ -23,7 +23,7 @@ class Genetic(object, ABC):
             if i%30 == 0:
                 self.population.mutate_element()
             if i%10 == 0:
-                self.bl()
+                self.local_search()
 
 #Ejemplos de uso
 class StationaryGenetic(Genetic):
@@ -63,7 +63,7 @@ class SimpleGenerationalMemetic(Genetic):
 
         return variated_vector
 
-    def bl(self):
+    def local_search(self):
         element = np.random.randint(len(self))
         mutated = np.copy(self.population[element].characteristics)
         value = key(mutated)
