@@ -1,16 +1,18 @@
 from genetic import *
 
 class StationaryGenetic(Genetic):
-    def __init__(self, reproduction_operator, evaluation_key):
+    def __init__(self, reproduction_operator, evaluation_key, mutation_key):
         population = StationaryPopulation(reproduction_operator,
-                                          evaluation_key)
+                                          evaluation_key,
+                                          mutation_key)
         super().__init__(population)
 
 class SimpleGenerationalMemetic(Genetic):
-    def __init__(self, reproduction_operator, evaluation_key):
+    def __init__(self, reproduction_operator, evaluation_key, mutation_key):
         self.key = evaluation_key
         population = GenerationalPopulation(reproduction_operator,
-                                            evaluation_key)
+                                            evaluation_key,
+                                            mutation_key)
         super().__init__(population)
 
     def __mutate_vector(vector):
