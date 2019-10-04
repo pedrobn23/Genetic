@@ -7,7 +7,7 @@ from abc import ABC
 Gene = collections.namedtuple('Gene', 'characteristics value')
 
 class Population(list, ABC):
-    def __init__(self, key, mutation_key, n_characteristics=10, population_size=30):
+    def __init__(self, key, mutation_key, *, n_characteristics=10, population_size=30):
         super().__init__()
         self.evaluation_function = key
         for i in range(population_size):
@@ -21,7 +21,7 @@ class Population(list, ABC):
     def advance_generation(self):
         raise NotImplementedError
 
-    def mutate_element(self, sigma=0.3, element=None):
+    def mutate_element(self, *, sigma=0.3, element=None):
         if not self:
             raise Exception('Can\'t mutate an element on a empty list')
 

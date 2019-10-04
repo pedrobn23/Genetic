@@ -3,13 +3,13 @@ from math import math
 
 class Genetic(object, ABC):
     @abstractmethod
-    def __init__(self, population):
+    def __init__(self, *, population):
         self.population = population
 
     def local_search(self):
         pass
 
-    def run(self, n_evaluaciones=15000):
+    def run(self, *, n_evaluaciones=15000):
         i = 0
         #Fijar numero de cuentas
         while i < n_evaluaciones:
